@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.css": "/book-club/static/css/main.10a59bcd.chunk.css",
-    "main.js": "/book-club/static/js/main.f5f94061.chunk.js",
-    "main.js.map": "/book-club/static/js/main.f5f94061.chunk.js.map",
+    "main.css": "/book-club/static/css/main.058852d5.chunk.css",
+    "main.js": "/book-club/static/js/main.a2282fc2.chunk.js",
+    "main.js.map": "/book-club/static/js/main.a2282fc2.chunk.js.map",
     "runtime-main.js": "/book-club/static/js/runtime-main.3ba1b1b7.js",
     "runtime-main.js.map": "/book-club/static/js/runtime-main.3ba1b1b7.js.map",
     "static/css/2.ff8bd605.chunk.css": "/book-club/static/css/2.ff8bd605.chunk.css",
-    "static/js/2.16d858c9.chunk.js": "/book-club/static/js/2.16d858c9.chunk.js",
-    "static/js/2.16d858c9.chunk.js.map": "/book-club/static/js/2.16d858c9.chunk.js.map",
+    "static/js/2.1370d5df.chunk.js": "/book-club/static/js/2.1370d5df.chunk.js",
+    "static/js/2.1370d5df.chunk.js.map": "/book-club/static/js/2.1370d5df.chunk.js.map",
     "index.html": "/book-club/index.html",
-    "precache-manifest.7469287e93a2a262e47cf09b3d9bcc81.js": "/book-club/precache-manifest.7469287e93a2a262e47cf09b3d9bcc81.js",
+    "precache-manifest.b621f86fa49112e5a60eb69eeaa831a1.js": "/book-club/precache-manifest.b621f86fa49112e5a60eb69eeaa831a1.js",
     "service-worker.js": "/book-club/service-worker.js",
     "static/css/2.ff8bd605.chunk.css.map": "/book-club/static/css/2.ff8bd605.chunk.css.map",
-    "static/css/main.10a59bcd.chunk.css.map": "/book-club/static/css/main.10a59bcd.chunk.css.map",
-    "static/js/2.16d858c9.chunk.js.LICENSE": "/book-club/static/js/2.16d858c9.chunk.js.LICENSE"
+    "static/css/main.058852d5.chunk.css.map": "/book-club/static/css/main.058852d5.chunk.css.map",
+    "static/js/2.1370d5df.chunk.js.LICENSE": "/book-club/static/js/2.1370d5df.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.3ba1b1b7.js",
     "static/css/2.ff8bd605.chunk.css",
-    "static/js/2.16d858c9.chunk.js",
-    "static/css/main.10a59bcd.chunk.css",
-    "static/js/main.f5f94061.chunk.js"
+    "static/js/2.1370d5df.chunk.js",
+    "static/css/main.058852d5.chunk.css",
+    "static/js/main.a2282fc2.chunk.js"
   ]
 }
