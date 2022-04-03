@@ -1,23 +1,13 @@
 {
   "files": {
-    "main.css": "/book-club/static/css/main.10c5eecc.chunk.css",
-    "main.js": "/book-club/static/js/main.1c53fb62.chunk.js",
-    "main.js.map": "/book-club/static/js/main.1c53fb62.chunk.js.map",
-    "runtime-main.js": "/book-club/static/js/runtime-main.045619c5.js",
-    "runtime-main.js.map": "/book-club/static/js/runtime-main.045619c5.js.map",
-    "static/css/2.8bd6500c.chunk.css": "/book-club/static/css/2.8bd6500c.chunk.css",
-    "static/js/2.5d4d48aa.chunk.js": "/book-club/static/js/2.5d4d48aa.chunk.js",
-    "static/js/2.5d4d48aa.chunk.js.map": "/book-club/static/js/2.5d4d48aa.chunk.js.map",
+    "main.css": "/book-club/static/css/main.d3667eb4.css",
+    "main.js": "/book-club/static/js/main.db83a139.js",
     "index.html": "/book-club/index.html",
-    "static/css/2.8bd6500c.chunk.css.map": "/book-club/static/css/2.8bd6500c.chunk.css.map",
-    "static/css/main.10c5eecc.chunk.css.map": "/book-club/static/css/main.10c5eecc.chunk.css.map",
-    "static/js/2.5d4d48aa.chunk.js.LICENSE.txt": "/book-club/static/js/2.5d4d48aa.chunk.js.LICENSE.txt"
+    "main.d3667eb4.css.map": "/book-club/static/css/main.d3667eb4.css.map",
+    "main.db83a139.js.map": "/book-club/static/js/main.db83a139.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.045619c5.js",
-    "static/css/2.8bd6500c.chunk.css",
-    "static/js/2.5d4d48aa.chunk.js",
-    "static/css/main.10c5eecc.chunk.css",
-    "static/js/main.1c53fb62.chunk.js"
+    "static/css/main.d3667eb4.css",
+    "static/js/main.db83a139.js"
   ]
 }
