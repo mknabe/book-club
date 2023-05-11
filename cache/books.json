@@ -1108,15 +1108,6 @@
   },
   {
     "year": "Upcoming",
-    "title": "Childhood's End",
-    "author": "Arthur C. Clarke",
-    "series": "",
-    "date_read": "",
-    "goodreads_link": "https://www.goodreads.com/book/show/414999.Childhood_s_End",
-    "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1320552628i/414999.jpg"
-  },
-  {
-    "year": "Upcoming",
     "title": "The 7½ Deaths of Evelyn Hardcastle",
     "author": "Stuart Turton",
     "series": "",
@@ -1150,5 +1141,14 @@
     "date_read": "",
     "goodreads_link": "https://www.goodreads.com/book/show/34673711-the-ember-blade",
     "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1490348335i/34673711.jpg"
+  },
+  {
+    "year": "Upcoming",
+    "title": "Yellowface",
+    "author": "RF Kuang",
+    "series": "",
+    "date_read": "",
+    "goodreads_link": "https://www.goodreads.com/book/show/59357120",
+    "image": "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1671466214i/59357120.jpg"
   }
 ]

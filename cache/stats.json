@@ -1723,20 +1723,6 @@
   },
   {
     "year": "Upcoming",
-    "title": "Childhood's End",
-    "year_published": "1953",
-    "genre": "Science Fiction|Classics",
-    "pages": "224",
-    "author.gender": "Male",
-    "author.ethnicity": "White",
-    "author.notes": "",
-    "author.nationality": "British",
-    "translated": null,
-    "flag.sexual_assault": null,
-    "flag.bad_parental_relationship": null
-  },
-  {
-    "year": "Upcoming",
     "title": "The 7½ Deaths of Evelyn Hardcastle",
     "year_published": "2018",
     "genre": "Mystery",
@@ -1787,6 +1773,20 @@
     "author.ethnicity": "White",
     "author.notes": "",
     "author.nationality": "British",
+    "translated": null,
+    "flag.sexual_assault": null,
+    "flag.bad_parental_relationship": null
+  },
+  {
+    "year": "Upcoming",
+    "title": "Yellowface",
+    "year_published": "",
+    "genre": "",
+    "pages": "",
+    "author.gender": "Female",
+    "author.ethnicity": "Asian",
+    "author.notes": null,
+    "author.nationality": null,
     "translated": null,
     "flag.sexual_assault": null,
     "flag.bad_parental_relationship": null
