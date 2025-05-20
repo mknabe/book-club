@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/book-club/static/css/main.3acbcd01.css",
-    "main.js": "/book-club/static/js/main.84a53969.js",
+    "main.css": "/book-club/static/css/main.cb33fc40.css",
+    "main.js": "/book-club/static/js/main.6099d7c0.js",
     "index.html": "/book-club/index.html",
-    "main.3acbcd01.css.map": "/book-club/static/css/main.3acbcd01.css.map",
-    "main.84a53969.js.map": "/book-club/static/js/main.84a53969.js.map"
+    "main.cb33fc40.css.map": "/book-club/static/css/main.cb33fc40.css.map",
+    "main.6099d7c0.js.map": "/book-club/static/js/main.6099d7c0.js.map"
   },
   "entrypoints": [
-    "static/css/main.3acbcd01.css",
-    "static/js/main.84a53969.js"
+    "static/css/main.cb33fc40.css",
+    "static/js/main.6099d7c0.js"
   ]
 }
