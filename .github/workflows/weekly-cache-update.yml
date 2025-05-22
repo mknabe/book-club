@@ -1,0 +1,31 @@
+name: Weekly Cache Update
+
+on:
+  schedule:
+    - cron: '0 7 * * 4' # 2 AM Central Time (CDT is UTC-5, so 2+5=7)
+  workflow_dispatch:
+
+jobs:
+  update-cache:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'yarn'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Make script executable
+        run: chmod +x scripts/doTheThing.sh
+
+      - name: Run cache update script
+        run: yarn run scripts/doTheThing.sh
+        env:
+          CI: true
+
