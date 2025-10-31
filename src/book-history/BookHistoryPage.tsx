@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import Book from "./components/Book";
 import BookList from "./components/BookList";
 import UpcomingBooks from "./components/UpcomingBooks";
-import { Row, Col, Divider, Button, Tag, Spin } from "antd";
+import { Row, Col, Button, Tag, Spin, Collapse, Divider, Input } from "antd";
 import { DoubleRightOutlined, PushpinOutlined } from "@ant-design/icons";
 import FavoriteIcon from "./components/FavoriteIcon";
 import DislikeIcon from "./components/DislikeIcon";
@@ -21,6 +21,23 @@ const BookHistoryPage = ({ books }: IProps) => {
   const [filteredBooks, setFilteredBooks] = useState<IBook[]>([]);
   const [showFavorites, setShowFavorites] = useState<boolean>(false);
   const [showDisliked, setShowDisliked] = useState<boolean>(false);
+  const [search, setSearch] = useState("");
+
+  // Filter books by search query
+  const searchFilteredBooks = filteredBooks.filter((b) => {
+    const query = search.trim().toLowerCase();
+    if (!query) return true;
+    return (
+      b.title?.toLowerCase().includes(query) ||
+      b.author?.toLowerCase().includes(query)
+    );
+  });
+
+  const years = [...new Set(searchFilteredBooks.map((b) => b.year))].filter(
+    (y) => y && !isNaN(y)
+  );
+  const [activeYears, setActiveYears] = useState<string[]>(years.map(year => String(year)));
+  const prevYearsRef = useRef<string[]>(years.map(year => String(year)));
 
   useEffect(() => {
     setFilteredBooks(books);
@@ -48,10 +65,6 @@ const BookHistoryPage = ({ books }: IProps) => {
     setFilteredBooks(books.filter((b) => b.genres.indexOf(genre) > -1));
   };
 
-  const years = [...new Set(filteredBooks.map((b) => b.year))].filter(
-    (y) => y && !isNaN(y)
-  );
-
   const genres = Object.entries(
     books
       .flatMap((b) => b.genres)
@@ -63,6 +76,22 @@ const BookHistoryPage = ({ books }: IProps) => {
 
   const currentlyReading = books.find((b) => b.isCurrentlyReading);
   const upcoming = books.filter((b) => b.isUpcoming).reverse();
+
+  useEffect(() => {
+    const yearKeys = years.map(year => String(year));
+    const prevYears = prevYearsRef.current;
+    const addedYears = yearKeys.filter(y => !prevYears.includes(y));
+    const removedYears = prevYears.filter(y => !yearKeys.includes(y));
+    if (addedYears.length > 0 || removedYears.length > 0) {
+      setActiveYears(prev => {
+        // Remove years no longer present
+        const filteredPrev = prev.filter(y => yearKeys.includes(y));
+        // Add new years
+        return [...filteredPrev, ...addedYears];
+      });
+      prevYearsRef.current = yearKeys;
+    }
+  }, [years]);
 
   return books.length ? (
     <>
@@ -118,14 +147,23 @@ const BookHistoryPage = ({ books }: IProps) => {
         </Col>
       </Row>
 
-      {/* Filters */}
-      <div style={{ marginTop: 20 }}>
-        <Button style={{ margin: 5 }} onClick={toggleFavorites}>
-          <FavoriteIcon /> {showFavorites ? "Show All" : "Show Favorites"}
-        </Button>
-        <Button style={{ margin: 5 }} onClick={toggleDisliked}>
-          <DislikeIcon /> {showDisliked ? "Show All" : "Show Disliked"}
-        </Button>
+      {/* Filters and Search */}
+      <div style={{ marginTop: 20, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+        <Input.Search
+          placeholder="Search books by title or author"
+          allowClear
+          value={search}
+          onChange={e => setSearch(e.target.value)}
+          style={{ margin: 5, maxWidth: 308 }}
+        />
+        <div style={{ display: 'flex', flexDirection: 'row', marginBottom: 8 }}>
+          <Button style={{ margin: 5 }} onClick={toggleFavorites}>
+            <FavoriteIcon /> {showFavorites ? "Show All" : "Show Favorites"}
+          </Button>
+          <Button style={{ margin: 5 }} onClick={toggleDisliked}>
+            <DislikeIcon /> {showDisliked ? "Show All" : "Show Disliked"}
+          </Button>
+        </div>
 
         {/* Genre Cloud */}
         <div className="GenreCloud" style={{ maxWidth: 390 }}>
@@ -138,29 +176,36 @@ const BookHistoryPage = ({ books }: IProps) => {
       </div>
 
       {years.map((year, idx) => {
-        const booksInYear = filteredBooks.filter((b) => b.year === year);
+        const booksInYear = searchFilteredBooks.filter((b) => b.year === year);
+        const isExpanded = activeYears.includes(String(year));
         return (
-          <div key={idx}>
-            <Divider orientation="left">
-              <span style={{ display: "inline-flex", alignItems: "center" }}>
-                <DoubleRightOutlined style={{ marginRight: 5 }} />
-                <span style={{ fontSize: 24 }}>{year}</span>
-              </span>
-              <span
-                style={{
-                  fontSize: 14,
-                  color: "gray",
-                  fontWeight: "normal",
-                  marginLeft: 10,
-                }}
-              >
-                {booksInYear.length} Books
-              </span>
-            </Divider>
-            <Row className="BookList">
-              <BookList books={booksInYear} />
-            </Row>
-          </div>
+          <Collapse
+            key={idx}
+            activeKey={activeYears}
+            onChange={(keys) => {
+              setActiveYears(Array.isArray(keys) ? keys : [keys]);
+            }}
+            className="custom-year-collapse"
+            bordered={false}
+          >
+            <Collapse.Panel
+              header={
+                <Divider orientation="left" className="year-ant-divider">
+                  <span style={{ display: "inline-flex", alignItems: "center" }}>
+                    <DoubleRightOutlined className={`year-chevron${isExpanded ? " expanded" : ""}`} />
+                    <span className="year-header-year">{year}</span>
+                    <span className="year-header-count">{booksInYear.length} Books</span>
+                  </span>
+                </Divider>
+              }
+              key={String(year)}
+              className="custom-year-panel"
+            >
+              <Row className="BookList">
+                <BookList books={booksInYear} />
+              </Row>
+            </Collapse.Panel>
+          </Collapse>
         );
       })}
     </>
