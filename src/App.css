@@ -205,3 +205,65 @@ body.dark-mode .ant-drawer-title {
 body.dark-mode .ant-drawer-close {
   color: var(--text-color) !important;
 }
+
+.custom-year-collapse {
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  margin-bottom: 0 !important;
+}
+
+.custom-year-panel {
+  background: var(--year-divider-bg) !important;
+  color: var(--year-divider-text) !important;
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 0 16px 0 !important;
+}
+
+.custom-year-panel .ant-collapse-header {
+  background: var(--year-divider-bg) !important;
+  color: var(--year-divider-text) !important;
+  border: none !important;
+  font-size: 24px;
+  padding-left: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+  display: flex;
+  align-items: center;
+}
+
+.year-ant-divider {
+  margin: 0 !important;
+  color: var(--year-divider-text) !important;
+  font-size: 24px !important;
+  font-weight: 600;
+  background: transparent;
+}
+.year-ant-divider .year-chevron {
+  margin-right: 5px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+  color: var(--year-divider-text);
+}
+.year-ant-divider .year-chevron.expanded {
+  transform: rotate(90deg);
+}
+.year-ant-divider .year-header-year {
+  font-size: 24px;
+
+}
+.year-ant-divider .year-header-count {
+    font-size: 14px;
+    color: gray;
+    font-weight: normal;
+    margin-left: 10px;
+}
+.custom-year-panel .ant-collapse-arrow {
+  display: none !important;
+}
+body.dark-mode .year-ant-divider {
+  color: var(--year-divider-text) !important;
+}
